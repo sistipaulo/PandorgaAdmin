@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Pandorga_Admin.Models.Sala>
+
+@{
+    ViewData["Title"] = "Relatório de Salas";
+}
+
+<h1>Relatório de Salas</h1>
+
+<h6>Total de Salas: @ViewData["TotalSalas"]</h6>
+
+<h6>Salas por Turma:</h6>
+<ul>
+    @foreach (var turma in (Dictionary<string, int>)ViewData["SalasPorTurma"])
+    {
+        <li>@turma.Key: @turma.Value sala(s)</li>
+    }
+</ul>
+
+<h6>Capacidade Total das Salas: @ViewData["CapacidadeTotal"]</h6>
+
+<h6>Capacidade Média das Salas: @ViewData["CapacidadeMedia"]</h6>

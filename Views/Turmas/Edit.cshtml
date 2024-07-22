@@ -1,0 +1,53 @@
+﻿@model Pandorga_Admin.Models.Turma
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<div id="overlay"></div>
+
+<div id="loader" class="spinner-border text-primary" role="status" style="display: none;">
+</div>
+
+<h1>Editar</h1>
+
+<h4>Turma</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="NomeTurma" class="control-label"></label>
+                <input asp-for="NomeTurma" class="form-control" />
+                <span asp-validation-for="NomeTurma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ano" class="control-label"></label>
+                <input asp-for="Ano" class="form-control" />
+                <span asp-validation-for="Ano" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Turno" class="control-label"></label>
+                <input asp-for="Turno" class="form-control" />
+                <span asp-validation-for="Turno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfessorID" class="control-label"></label>
+                <select asp-for="ProfessorID" class="form-control" asp-items="ViewBag.ProfessorID"></select>
+                <span asp-validation-for="ProfessorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salvar" class="btn btn-primary mt-3">
+                    <i class="bi bi-save"></i>
+                </button>
+                <a class="btn btn-secondary mt-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Voltar" asp-action="Index"><i class="bi bi-arrow-counterclockwise"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Pandorga_Admin.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<div id="overlay"></div>
+
+<div id="loader" class="spinner-border text-primary" role="status" style="display: none;">
+</div>
+
+<h1 class="title-top">Listagem de Alunos</h1>
+
+<button type="button" class="btn btn-primary">
+    <a class="create-btn" asp-action="Create">Novo Aluno</a>
+</button>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                Idade
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeResponsavel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Turma)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+                <td class="align-middle">
+                    @if ((DateTime.Now - item.DataNascimento).TotalDays < 365)
+                    {
+                        var idade = DateTime.Now - item.DataNascimento;
+                        var meses = (int)Math.Floor(idade.TotalDays / 30);
+                        @: @meses meses
+                    }
+                    else
+                    {
+                        @: @((int)Math.Floor((DateTime.Now - item.DataNascimento).TotalDays / 365.25)) anos
+                    }
+                </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.NomeResponsavel)
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Turma.NomeTurma)
+            </td>
+            <td>
+                <a class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i></a> 
+                <a class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Detalhes" asp-action="Details" asp-route-id="@item.ID"><i class="bi bi-info-circle"></i></a> 
+                <a class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash-fill"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

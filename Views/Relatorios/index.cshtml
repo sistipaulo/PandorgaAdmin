@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Todos os Relatórios";
+}
+
+<h1 class="title-top">Relatórios</h1>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card mb-2" >
+            <div class="card-body">
+                <h5 class="card-title">Alunos</h5>
+                <p class="card-text">Exibe o total de alunos matriculados e a idade média dos alunos.</p>
+                <a href="@Url.Action("Relatorio", "Alunos")" class="btn btn-primary">Exibir</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card mb-2" >
+            <div class="card-body">
+                <h5 class="card-title">Turmas</h5>
+                <p class="card-text">Exibe o total de turmas, alunos por faixa etária e turmas divididas por ano.</p>
+                <a href="@Url.Action("Relatorio", "Turmas")" class="btn btn-primary">Exibir</a>
+            </div>
+        </div>
+    </div>    <div class="col-sm-4">
+        <div class="card mb-2" >
+            <div class="card-body">
+                <h5 class="card-title">Funcionários</h5>
+                <p class="card-text">Exibe o total de funcionários e quantidade de funcionários por cargos.</p>
+                <a href="@Url.Action("Relatorio", "Professores")" class="btn btn-primary">Exibir</a>
+            </div>
+        </div>
+    </div>    <div class="col-sm-4">
+        <div class="card mb-2" >
+            <div class="card-body">
+                <h5 class="card-title">Eventos</h5>
+                <p class="card-text">Exibe o total de eventos, eventos por turma, eventos por sala e próximos eventos.</p>
+                <a href="@Url.Action("Relatorio", "Eventos")" class="btn btn-primary">Exibir</a>
+            </div>
+        </div>
+    </div>    <div class="col-sm-4">
+        <div class="card mb-2" >
+            <div class="card-body">
+                <h5 class="card-title">Salas</h5>
+                <p class="card-text">Exibe o total de salas, salas por turma, capacidade total e média das salas.</p>
+                <a href="@Url.Action("Relatorio", "Salas")" class="btn btn-primary">Exibir</a>
+            </div>
+        </div>
+    </div>    
+</div>
+

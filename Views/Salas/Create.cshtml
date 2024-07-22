@@ -1,0 +1,48 @@
+﻿@model Pandorga_Admin.Models.Sala
+
+@{
+    ViewData["Title"] = "Casdastrar Sala";
+}
+
+<div id="overlay"></div>
+
+<div id="loader" class="spinner-border text-primary" role="status" style="display: none;">
+</div>
+
+<h1>Cadastro</h1>
+
+<h4>Sala</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacidade" class="control-label"></label>
+                <input asp-for="Capacidade" class="form-control" />
+                <span asp-validation-for="Capacidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TurmaID" class="control-label"></label>
+                <select asp-for="TurmaID" class ="form-control" asp-items="ViewBag.TurmaID">
+                    <option value="">Selecione uma turma (opcional)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="liveToastBtn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salvar" class="btn btn-primary mt-3">
+                    <i class="bi bi-save"></i>
+                </button>
+                <a class="btn btn-secondary mt-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Voltar" asp-action="Index"><i class="bi bi-arrow-counterclockwise"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

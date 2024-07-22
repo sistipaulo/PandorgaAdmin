@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Pandorga_Admin.Models.Professor>
+
+@{
+    ViewData["Title"] = "Relatório de Funcionários";
+}
+
+<h1 class="title-top">Relatório de Funcionários</h1>
+
+<p><strong>Total de Funcionários:</strong> @ViewData["TotalProfessores"]</p>
+
+
+<h6>Funcionários por Cargos:</h6>
+<ul>
+    @foreach (var professor in (Dictionary<string, int>)ViewData["Cargos"])
+    {
+        <li>@professor.Key: @professor.Value</li>
+    }
+</ul>
+

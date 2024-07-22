@@ -1,0 +1,42 @@
+﻿@model Pandorga_Admin.Models.Professor
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Funcionário</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Especializacao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Especializacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar" asp-action="Edit" asp-route-id="@Model?.ID"><i class="bi bi-pencil-square"></i></a>
+    <a class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Voltar" asp-action="Index"><i class="bi bi-arrow-counterclockwise"></i></a>
+</div>

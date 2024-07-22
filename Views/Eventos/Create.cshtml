@@ -1,0 +1,69 @@
+﻿@model Pandorga_Admin.Models.Evento
+
+@{
+    ViewData["Title"] = "Cadastrar Evento";
+}
+
+<div id="overlay"></div>
+
+<div id="loader" class="spinner-border text-primary" role="status" style="display: none;">
+</div>
+
+<h1>Cadastro</h1>
+
+<h4>Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeEvento" class="control-label"></label>
+                <input asp-for="NomeEvento" class="form-control" />
+                <span asp-validation-for="NomeEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input asp-for="Data" class="form-control date-input" type="text" />
+                <span asp-validation-for="Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Local" class="control-label"></label>
+                <input asp-for="Local" class="form-control" />
+                <span asp-validation-for="Local" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TurmaID" class="control-label"></label>
+                <select asp-for="TurmaID" class="form-control" asp-items="ViewBag.TurmaID">
+                    <option value="">Selecione uma turma (opcional)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SalaID" class="control-label"></label>
+                <select asp-for="SalaID" class="form-control" asp-items="ViewBag.SalaID">
+                    <option value="">Selecione uma sala (opcional)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="liveToastBtn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Salvar" class="btn btn-primary mt-3">
+                    <i class="bi bi-save"></i>
+                </button>
+                <a class="btn btn-secondary mt-3" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Voltar" asp-action="Index"><i class="bi bi-arrow-counterclockwise"></i></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>
+        $(document).ready(function () {
+            $(".date-input").inputmask("99/99/9999");
+        });
+    </script>
+}

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Pandorga_Admin.Models.Evento>
+
+@{
+    ViewData["Title"] = "Relatório de Eventos";
+}
+
+<h1>Relatório de Eventos</h1>
+
+<p><strong>Total de Eventos:</strong> @ViewData["TotalEventos"]</p>
+
+<h6>Eventos por Turma:</h6>
+<ul>
+    @foreach (var turma in (Dictionary<string, int>)ViewData["EventosPorTurma"])
+    {
+        <li>@turma.Key: @turma.Value evento(s)</li>
+    }
+</ul>
+
+<h6>Eventos por Sala:</h6>
+<ul>
+    @foreach (var sala in (Dictionary<string, int>)ViewData["EventosPorSala"])
+    {
+        <li>@sala.Key: @sala.Value evento(s)</li>
+    }
+</ul>
+
+<h6>Próximos Eventos:</h6>
+<ul>
+    @foreach (var evento in (List<Pandorga_Admin.Models.Evento>)ViewData["ProximosEventos"])
+    {
+        <li>@evento.Data.ToString("dd/MM/yyyy") - @evento.NomeEvento (@evento.Local)</li>
+    }
+</ul>

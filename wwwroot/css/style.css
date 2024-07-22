@@ -1,0 +1,980 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Definindo as variáveis que irão representar as cores principais do site */
+:root {
+  --escuro: #0095a0;
+  --claro: #fdcc38;
+  --gradient: linear-gradient(90deg, #0095a0, #0e7f85);
+  --red: #19d1ee;
+  --yellow: #5639ca;
+  --green: #14254c;
+  --blue: #19d1ee;
+  --darkBlue: #0095a0;
+  --darkGreen: #0095a0;
+}
+
+/* ------------------- Início Barra de Rolagem ------------------- */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  border: 7px solid #c7c4c4;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(151, 149, 149);
+  border-radius: 10px;
+}
+
+/* ------------------- Fim Barra de Rolagem ------------------- */
+
+/* ------------------- Início Configurações Gerais ------------------- */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
+/* ------------------- Fim Configurações Gerais ------------------- */
+
+/* Tudo que for 'selecionado' no site ficará com estas características */
+*::selection {
+  background: var(--blue);
+  color: #fff;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  /* delimitando um tamanho padrão para todo html */
+  font-size: 62.5%;
+  /* não deixar que a página seja cortada e adquira barra de rolagem horizontal */
+  overflow-x: hidden;
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  font-family: inherit;
+}
+
+/* ------------------- Início Configurações Gerais Section ------------------- */
+section {
+  max-height: 100%;
+  padding: 0 9%;
+  padding-top: 7.5rem;
+  padding-bottom: 2rem;
+  font-family: inherit;
+}
+/* ------------------- Fim Configurações Gerais Section ------------------- */
+
+/* ------------------- Início Configurações Botões ------------------- */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 3rem;
+  border-radius: 5rem;
+  background: var(--gradient);
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+/* ------------------- Fim Configurações Botões ------------------- */
+
+/* ------------------- Início Configurações Títulos ------------------- */
+.heading {
+  text-align: center;
+  /* definindo background */
+  background: var(--gradient);
+  /* cor da fonte */
+  color: transparent;
+  /* mesclando a cor do bg com o título */
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+/* ------------------- Fim Configurações Títulos ------------------- */
+
+/* ------------------- Início Cabeçalho ------------------- */
+.container-fluid.top-bar {
+    background-color: #007CA3;
+    color: #fff;
+    padding: 1rem 9%;
+    z-index: 1001;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    text-align: center;
+}
+
+
+.container-fluid.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: none;
+}
+
+    .container-fluid.top-bar .contact-details li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    .container-fluid.top-bar .social-list li a {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+.top-icon {
+    font-size: 1.4rem !important;
+    padding-right: 1rem;
+}
+
+.top-text {
+    font-size: 1.2rem;
+}
+
+.social-icon {
+    transition: 0.3s;
+}
+
+    .social-icon:hover {
+        transform: scale(1.3);
+        padding-left: 0.5rem;
+    }
+
+.margin-first {
+    margin-left: 17rem;
+}
+
+header {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    background: var(--darkBlue);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+    header ul li {
+        display: inline-block;
+    }
+
+    header .logo img {
+        width: 11rem;
+        height: 5rem;
+    }
+
+    header .logo span {
+        color: #fff;
+    }
+
+    header .navbar ul li {
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        transition: 0.2s;
+    }
+
+    header .navbar a {
+        font-size: 1.7rem;
+        color: #fff;
+    }
+
+        header .navbar a:hover {
+            color: var(--green);
+        }
+
+body {
+    padding-top: 120px;
+}
+
+/* ------------------- Fim Cabeçalho ------------------- */
+
+/* ------------------- Início Primeira Sessão ------------------- */
+.home {
+    padding-top: 0!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  height: 90vh;
+  background: linear-gradient(rgba(85, 146, 250, 0.692), rgba(3, 28, 77, 0.432)),
+  url(../images/nuvens.jpg);
+  background-size: cover;
+}
+
+.slick-carousel img {
+  width: 40rem;
+  height: 30rem;
+  padding: 0 1rem 0 1rem;
+  max-width: 100%;
+  transition: ease-in 0.2s;
+}
+
+
+.matriculas {
+  text-align: center;
+  position: relative;
+  color: #fff;
+  padding: 1.5rem;
+  background: var(--darkBlue);
+}
+
+.button {
+  background-color: #ddec55;
+  font-size: 1.7rem;
+  color: var(--green);
+  width: 14.5em;
+  height: 3.9em;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+}
+
+.button:hover {
+  background-color: #fcff36;
+  cursor: pointer;
+}
+
+.button svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.button:hover svg {
+  transform: translateX(5px);
+}
+
+.text {
+  margin: 0 1.5em
+}
+
+.home img {
+  transform: scaleX(-1);
+}
+
+.home .imagehome img {
+  width:15vw;
+  animation: float 3s linear infinite;
+}
+
+/* efeito 'flutuar' da imagem */
+@keyframes float {
+  0%, 100%{
+      transform: translateY(0rem);
+  }
+  50%{
+      transform: translateY(-2.8rem);
+  }
+}
+
+.servicos .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.servicos .box-container .box {
+  flex:1rem;
+  background:#fff;
+  border-radius: .5rem;
+  border:.1rem solid rgba(0,0,0,.2);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  margin:1.5rem;
+  padding:3rem 2rem;
+  border-radius: .5rem;
+  text-align: center;
+  transition: .2s linear;
+}
+
+.servicos .box-container .box img {
+  height: 15rem;
+}
+
+.servicos .box-container .box h3 {
+  font-size: 2rem;
+  color:#333;
+  padding-top: 1rem;
+}
+
+.servicos .box-container .box p {
+  font-size: 1.3rem;
+  color:#666;
+  padding: 1rem 0;
+  text-transform: none;
+}
+
+.menu-yellow{
+  background-color: #fcc33b;
+}
+
+.menu-red {
+  background-color: #ed6890;
+}
+
+.menu-blue {
+  background-color: #5cc5d6;
+}
+
+.menu-green{
+  background-color: #a4cd57;
+}
+
+.menu-white {
+    border: 2px solid #fff;
+}
+
+.home .conteudo {
+  padding-right: 5rem;
+  width: 100%;
+}
+
+header h1{
+  font-size: 2.8rem;
+  color:var(--escuro);
+}
+
+.box-container-depoimentos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+.depoimentos {
+  background-color: #eee;
+}
+
+.depoimento {
+  background:#fff;
+  border-radius: .5rem;
+  border:.1rem solid rgba(0,0,0,.2);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  margin:1.5rem;
+  padding:3rem 2rem;
+  border-radius: .5rem;
+  text-align: center;
+  transition: .2s linear;
+}
+
+.depoimento h3 {
+  font-size: 1.5rem;
+}
+
+.depoimento p {
+  width: 27rem;
+  height: 16rem;
+  text-align: justify;
+}
+
+
+header .logo span {
+  font-size: 2.8rem;
+  color: #fff;
+}
+
+.home .conteudo h1 {
+  font-size: 5.3rem;
+  text-transform: none;
+  line-height: 120%;
+  color: #fff;
+}
+
+.home .conteudo p {
+  font-size: 1.7rem;
+  color: #f8f8f8;
+  padding: 1rem 0;
+  text-transform: none;
+  width: 88%;
+}
+
+.home .conteudo .buttons .botao {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.home .conteudo .buttons a i {
+  transform: scale(3.2);
+  margin: 30px;
+  color: white;
+}
+
+.home .conteudo .buttons #face {
+  background: #247bef;
+  transition: 0.2s;
+}
+
+.home .conteudo .buttons #whats {
+  background: #25d366;
+  transition: 0.2s;
+}
+
+.home .conteudo .buttons #insta {
+  background: linear-gradient(#b500ff, #ed088e, #ffb900);
+  transition: 0.2s;
+}
+
+.home .conteudo .buttons #face:hover {
+  transform: scale(1.1);
+}
+
+.home .conteudo .buttons #whats:hover {
+  transform: scale(1.1);
+}
+
+.home .conteudo .buttons #insta:hover {
+  transform: scale(1.1);
+}
+/* ------------------- Fim Primeira Sessão ------------------- */
+
+/* ------------------- Início Segunda Sessão ------------------- */
+.card {
+  max-width: 330px;
+  height: 330px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+}
+
+.card a {
+  text-decoration: none
+}
+
+.content {
+  padding: 1.1rem;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  background-color: rgb(70, 175, 175);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  color: #111827;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.desc {
+  margin-top: 0.5rem;
+  color: #6B7280;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.action {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--darkBlue);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.action span {
+  transition: .3s ease;
+}
+
+.cta_text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta_area-download {
+    padding: 0 2rem;
+    width: 22rem;
+    height: 6rem;
+}
+
+.servicos2 {
+  background-color: var(--claro);
+  padding-top: 2.5rem;
+}
+
+.app-subtitle {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: none;
+    font-weight: normal;
+}
+.app {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.action:hover span {
+  transform: translateX(4px);
+}
+
+.servicos .box-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem
+  }
+
+  .stars img {
+    width: 2rem;
+    margin: 0 0.2rem;
+    height: 2rem !important;
+  }
+
+.fotos {
+  height: 100%;
+  padding: 0 9%;
+  padding-top: 7.5rem;
+  padding-bottom: 2rem;
+  background: var(--gradient);
+}
+
+.title-fotos {
+  color: #fff;
+  font-size: 3.5rem;
+  text-align: center;
+  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+}
+
+.fotos .galeria {
+  padding: 5rem 1rem;
+
+  background-size: cover;
+  background-position: right;
+}
+
+#items {
+  display: flex;
+}
+
+.item {
+  width: calc(100% / 4);
+  height: 350px;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  opacity: 0.7;
+  filter: grayscale(1);
+  padding: 5px;
+}
+
+.item img:hover {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+/* ------------------- Fim Terceira Sessão ------------------- */
+
+/* ------------------- Início Quarta Sessão ------------------- */
+.complemento {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.contact-in {
+  display: flex;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.nav-list li a{
+color: #fff;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+.contact-map {
+  flex: 50%;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.contato {
+  height: 100% !important;
+  background-image: url(images/fly.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 19rem;
+  background-position-y: 6rem;
+  background-position-x: 74rem;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-form {
+  flex: 50%;
+  text-align: center;
+  background: #fff;
+  padding: 2rem 3rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+  margin-bottom: 10px;
+  padding-left: 3px;
+  text-align: left;
+  font-size: 3rem;
+}
+
+.contact-form input {
+  width: 100%;
+  height: 40px;
+  color: #000;
+  border: 1px solid #bcbcbc;
+  border-radius: 50px;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-transform: none;
+}
+
+.fa {
+  font-size: 3rem;
+}
+
+.info1 {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin: 1.5rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+
+}
+
+    .info1:hover {
+        box-shadow: 5px 10px #88888817;
+        transform: scale(1.05);
+        color: #0095a0;
+    }
+
+.media-body {
+  width: 75%;
+}
+
+.media-heading{
+  font-size: 2rem;
+}
+
+.media-body p {
+  font-size: 1.3rem;
+  text-transform: none;
+}
+
+
+
+.info2{
+    background-color: var(--darkBlue);
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+}
+
+
+.features{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: none;
+}
+
+
+
+
+.wow {
+  width: 50%;
+}
+
+/*----- Início Estilo input radio -----*/
+#newsletter {
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 3px;
+}
+
+#newsletter h4 {
+  color: #6d6d6d;
+  font-weight: normal;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+/* "Apagando o radio-button padrão do navegador" */
+#newsletter input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+/* Inserindo um "novo" radio-button */
+#newsletter label {
+  display: inline-block;
+  background-color: #fff;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #bcbcbc;
+  border-radius: 50px;
+}
+
+#newsletter label:hover {
+  background: rgb(246, 246, 246);
+}
+
+#newsletter input[type="radio"]:checked + label {
+  background: var(--escuro);
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+}
+/*----- Fim Estilo input radio ------*/
+
+.contact-form input::placeholder {
+  color: #aaa;
+}
+
+.contact-form textarea {
+  width: 100%;
+  height: 130px;
+  color: #000;
+  border: 1px solid #bcbcbc;
+  border-radius: 20px;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-transform: none;
+}
+
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form .botao {
+  border-bottom: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--gradient);
+  color: #fff;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  width: 45%;
+}
+
+.contact-form .botao:hover {
+  letter-spacing: 1px;
+}
+/* ------------------- Fim Quarta Sessão ------------------- */
+
+/* ------------------- Início Rodapé ------------------- */
+footer {
+  padding-top: 3rem;
+  background: var(--gradient);
+  background-size: cover;
+  background-position: center;
+}
+
+footer .box-container {
+  display: flex;
+  padding: 0 10rem;
+}
+
+footer .box-container .box {
+  flex: 1 1 25rem;
+  margin: 2rem;
+  padding: 10px;
+}
+
+footer .box-container .box h4,
+footer .box-container .box h2,
+footer .box-container .box .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-transform: none;
+  font-style: normal;
+}
+
+footer .box-container .box p {
+  font-size: 1.5rem;
+  padding: 0;
+  color: #eee;
+  text-transform: none;
+}
+
+footer .box-container .box p .title {
+  text-align: left;
+}
+
+footer .box-container .box a {
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  color: #eee;
+}
+
+footer .box-container .box a:hover {
+  text-decoration: underline;
+}
+
+footer .box-container .box .info {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+footer .box-container .box .info i {
+  margin: 0.5rem 0;
+  margin-right: 1rem;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--escuro);
+  font-size: 1.5rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  text-align: center;
+}
+/* ------------------- Fim Rodapé ------------------- */
+
+.alert-success{
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 1rem;
+}

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Pandorga_Admin.Models.Turma>
+
+@{
+    ViewData["Title"] = "Relatório de Turmas";
+}
+
+<h1 class="title-top">Relatório de Turmas</h1>
+
+<h6>Total de Turmas: @ViewData["TotalTurmas"]</h6>
+<h6>Idade Média dos Alunos: @ViewData["MediaIdade"] anos</h6>
+
+<h6>Distribuição de Alunos por Faixa Etária:</h6>
+<ul>
+    @foreach (var faixa in (Dictionary<string, int>)ViewData["FaixaEtaria"])
+    {
+        <li>@faixa.Key: @faixa.Value</li>
+    }
+</ul>
+
+<h6>Distribuição de Turmas por Ano:</h6>
+<ul>
+    @foreach (var ano in (Dictionary<int, int>)ViewData["TurmasPorAno"])
+    {
+        <li>@ano.Key: @ano.Value turma(s)</li>
+    }
+</ul>

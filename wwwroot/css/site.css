@@ -1,0 +1,127 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.display-4 {
+    font-weight: 600;
+    color: red;
+}
+
+.nav-item {
+    transition: ease-in-out 0.1s;
+}
+
+    .nav-item:hover {
+        transform: scale(1.1);
+        color: #FFF !important;
+        font-weight: bold !important;
+        margin-left: 0.2rem !important;
+    }
+
+
+.create-btn {
+    color: #FFF;
+    text-decoration: none;
+}
+
+    .create-btn:hover {
+        color: #FFF;
+    }
+
+.title-top {
+    padding: 1rem 0;
+}                                                      
+
+#loader {
+    position: fixed; /* Define o posicionamento fixo para o loader */
+    top: 50%; /* Define o topo como 50% da altura da tela */
+    left: 50%; /* Define a esquerda como 50% da largura da tela */
+    ; /* Usa transform para centralizar o elemento */
+    z-index: 1000; /* Define um índice z alto para garantir que esteja na frente de outros elementos */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none; /* Ocultar por padrão */
+    z-index: 999; /* Índice z alto para garantir que esteja acima de outros elementos */
+}
+
+.custom-navbar {
+    background-color: #0095a0 !important; /* Cor verde */
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nav-partial{
+    margin-top: 15rem;
+}
+
+.bi-person-fill,
+.bi-book-fill,
+.bi-person-badge,
+.bi-calendar-event,
+.bi-door-open-fill,
+.bi-file-text {
+    padding-right: 0.5rem;
+}
+
+.navbar-expand-sm .navbar-nav {
+    flex-direction: column !important;
+}
+
+#chartTotalAlunos {
+    height: 400px !important;
+    width: 400px !important;
+}
+

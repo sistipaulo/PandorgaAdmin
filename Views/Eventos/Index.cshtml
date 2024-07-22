@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Pandorga_Admin.Models.Evento>
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+<div id="overlay"></div>
+
+<div id="loader" class="spinner-border text-primary" role="status" style="display: none;">
+</div>
+
+<h1 class="title-top">Listagem de Eventos</h1>
+
+<button type="button" class="btn btn-primary">
+    <a class="create-btn" asp-action="Create">Novo Evento</a>
+</button>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeEvento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.NomeEvento)
+            </td>
+            <td class="align-middle">
+                @item.Data.ToString("dd/MM/yyyy")
+            </td>
+            <td class="align-middle">
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                <a class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i></a> 
+                <a class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Detalhes" asp-action="Details" asp-route-id="@item.ID"><i class="bi bi-info-circle"></i></a> 
+                <a class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Excluir" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash-fill"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
